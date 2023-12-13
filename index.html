@@ -7,7 +7,7 @@
   </head>
   <body>
     <section class="before">Before</section>
-    <section class="shown">Shown</section>
+    <section class="shown">Super mystic section</section>
     <section class="after">After</section>
   </body>
 </html>
@@ -32,10 +32,40 @@
     transform: translate(-100vw, -100vh);
   }
   .shown {
-    background: orange;
+    background: #fff;
+    -webkit-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
+    -moz-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
+    box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
+    animation: 0.75s ease-in-out infinite blurry-aura,
+      5s ease-in-out infinite spooky-movement;
+    animation-direction: alternate;
   }
   .after {
     background: red;
     transform: translate(100vw, -100vh);
+  }
+
+  @keyframes blurry-aura {
+    0% {
+      -webkit-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
+      -moz-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
+      box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
+    }
+    100% {
+      -webkit-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
+      -moz-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
+      box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
+    }
+  }
+  @keyframes spooky-movement {
+    0% {
+      transform: translate(-0.5rem, 0.5rem);
+    }
+    50% {
+      transform: translate(0.5rem, -0.5rem);
+    }
+    100% {
+      transform: translate(-1rem, -1rem);
+    }
   }
 </style>
