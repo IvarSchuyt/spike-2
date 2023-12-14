@@ -4,11 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spike 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <section class="before">Before</section>
-    <section class="shown">Super mystic section</section>
-    <section class="after">After</section>
+    <section class="before" id="1">
+      <div class="left">
+        <h2>Contact</h2>
+      </div>
+      <div class="right">
+        <ul class="ul-right">
+          <li class="horoscope">
+            <img src="scorpio.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+          <li class="horoscope">
+            <img src="gemini.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+          <li class="horoscope">
+            <img src="pisces.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+          <li class="horoscope">
+            <img src="leo.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+          <li class="horoscope">
+            <img src="virgo.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="shown" id="2">
+      <div class="left">
+        <h2>Betalingen</h2>
+        <ul>
+          <li><h3>Afschrijvingen</h3></li>
+          <li>15-05-23 | €15.00 - Opwaardering</li>
+          <li>07-02-23 | €15.00 - Opwaardering</li>
+          <li>Dit is het einde van uw afschrijvingen</li>
+        </ul>
+        <h3>Heeft u vragen?</h3>
+        <p>Klik ergens op dit vlak!</p>
+      </div>
+      <div class="right">
+        <ul class="ul-right">
+          <li class="horoscope">
+            <img src="scorpio.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+          <li class="horoscope">
+            <img src="gemini.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+          <li class="horoscope">
+            <img src="pisces.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+          <li class="horoscope">
+            <img src="leo.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+          <li class="horoscope">
+            <img src="virgo.png" alt="scorpio sign" height="24" width="24" />
+          </li>
+        </ul>
+      </div>
+    </section>
   </body>
 </html>
 
@@ -16,49 +76,133 @@
   body {
     overflow: hidden;
     margin: 0;
+    min-height: 100vh;
+    font-family: Poppins, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
   }
+
   section {
     height: 50vh;
     width: 50vw;
     position: fixed;
     top: 25vh;
     left: 25vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-flex;
+    background: #fff;
+    padding: 3rem 0 0 4rem;
   }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section:hover {
+    cursor: pointer;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+
+  img {
+    transform-origin: top;
+  }
+
+  .horoscope {
+    opacity: 0;
+  }
+
+  .horoscope:nth-of-type(1) {
+    animation: spiral-in 4s ease-in-out infinite alternate;
+  }
+  .horoscope:nth-of-type(2) {
+    animation: spiral-in 4s ease-in-out 0.4s infinite alternate;
+  }
+  .horoscope:nth-of-type(3) {
+    animation: spiral-in 4s ease-in-out 0.8s infinite alternate;
+  }
+  .horoscope:nth-of-type(4) {
+    animation: spiral-in 4s ease-in-out 1.2s infinite alternate;
+  }
+  .horoscope:nth-of-type(5) {
+    animation: spiral-in 4s ease-in-out 1.6s infinite alternate;
+  }
+
+  section:hover li:nth-of-type(1):not(.horoscope) {
+    animation: spiral-in 4s ease-in-out 4s infinite alternate;
+  }
+  section:hover li:nth-of-type(2):not(.horoscope) {
+    animation: spiral-in 4s ease-in-out 4.4s infinite alternate;
+  }
+  section:hover li:nth-of-type(3):not(.horoscope) {
+    animation: spiral-in 4s ease-in-out 4.8s infinite alternate;
+  }
+  section:hover li:nth-of-type(4):not(.horoscope) {
+    animation: spiral-in 4s ease-in-out 5.2s infinite alternate;
+  }
+
+  .ul-right {
+    justify-self: center;
+    margin: 8rem 0 0 15rem;
+  }
+
   .before {
-    background: yellow;
     transform: translate(-100vw, -100vh);
   }
+
   .shown {
-    background: #fff;
-    -webkit-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
-    -moz-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
-    box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
+    -webkit-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
+    -moz-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
+    box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
     animation: 0.75s ease-in-out infinite blurry-aura,
       5s ease-in-out infinite spooky-movement;
     animation-direction: alternate;
   }
-  .after {
-    background: red;
-    transform: translate(100vw, -100vh);
+
+  .page-transition-in {
+    animation: 1s ease-in-out 1 page-transition-in forwards;
+  }
+
+  .page-transition-out {
+    animation: 1s ease-in-out 1 page-transition-out forwards;
   }
 
   @keyframes blurry-aura {
     0% {
-      -webkit-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
-      -moz-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
-      box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.5);
-    }
-    100% {
       -webkit-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
       -moz-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
       box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 0.75);
     }
+    100% {
+      -webkit-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 1);
+      -moz-box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 1);
+      box-shadow: 10px 10px 43px 0px rgba(110, 47, 105, 1);
+    }
   }
+
   @keyframes spooky-movement {
     0% {
+    }
+    25% {
       transform: translate(-0.5rem, 0.5rem);
     }
     50% {
@@ -68,4 +212,72 @@
       transform: translate(-1rem, -1rem);
     }
   }
+
+  @keyframes page-transition-in {
+    100% {
+      transform: translate(0vw, 0vh);
+    }
+  }
+  @keyframes page-transition-out {
+    100% {
+      transform: translate(100vw, -100vh);
+    }
+  }
+
+  @keyframes spiral-in {
+    0% {
+      transform: rotate(-720deg);
+    }
+    25% {
+      opacity: 100;
+    }
+    50% {
+      transform: rotate(0);
+      opacity: 100;
+    }
+    100% {
+      transform: rotate(720deg) translate(7.5rem, 7.5rem);
+      opacity: 100;
+    }
+  }
 </style>
+
+<script defer>
+  let pageOne = document.getElementById("1");
+  let pageTwo = document.getElementById("2");
+
+  pageTwo.addEventListener("click", transitionOne);
+  pageOne.addEventListener("click", transitionTwo);
+
+  function transitionOne() {
+    // Execute immediately
+    pageOne.classList.add("page-transition-in");
+    pageTwo.classList.add("page-transition-out");
+    pageOne.classList.add("shown");
+
+    // Delayed execution after one second
+    setTimeout(function () {
+      pageOne.classList.remove("before");
+      pageTwo.classList.remove("shown");
+      pageOne.classList.remove("page-transition-in");
+      pageTwo.classList.add("before");
+      pageTwo.classList.remove("page-transition-out");
+    }, 1000);
+  }
+
+  function transitionTwo() {
+    // Execute immediately
+    pageTwo.classList.add("page-transition-in");
+    pageOne.classList.add("page-transition-out");
+    pageTwo.classList.add("shown");
+
+    // Delayed execution after one second
+    setTimeout(function () {
+      pageTwo.classList.remove("before");
+      pageOne.classList.remove("shown");
+      pageTwo.classList.remove("page-transition-in");
+      pageOne.classList.add("before");
+      pageOne.classList.remove("page-transition-out");
+    }, 1000);
+  }
+</script>
