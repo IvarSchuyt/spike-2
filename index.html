@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <section class="before" id="1">
+    <section class="before" id="1" tabindex="0">
       <div class="left">
         <h2>Contact</h2>
         <p>Bel onze klantenservice op werkdagen van 9.00 tot 17.00 uur.</p>
@@ -71,7 +71,7 @@
       </div>
     </section>
 
-    <section class="shown" id="2">
+    <section class="shown" id="2" tabindex="0">
       <div class="left">
         <h2>Betaalgeschiedenis</h2>
         <ul>
@@ -292,8 +292,8 @@
   let pageOne = document.getElementById("1");
   let pageTwo = document.getElementById("2");
 
-  pageTwo.addEventListener("click", transitionOne);
-  pageOne.addEventListener("click", transitionTwo);
+  pageTwo.addEventListener("focus", transitionOne);
+  pageOne.addEventListener("focus", transitionTwo);
 
   function transitionOne() {
     // Execute immediately
